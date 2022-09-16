@@ -1,0 +1,203 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "bebeg sjaiwarm simualatro", HidePremium = true, SaveConfig = true, ConfigFolder = "nigga-hub"})
+
+getgenv().TPPlace = "string"
+
+function Teleport(teleportPlace)
+    local player = game.Players.LocalPlayer
+    player.Character.HumanoidRootPart.CFrame = teleportPlace
+end
+
+-- Tabs
+
+local Tab = Window:MakeTab({
+	Name = ",main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Teleports = Window:MakeTab({
+	Name = "telpeort",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Keybinds = Window:MakeTab({
+	Name = "stering",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Values
+_G.autoSwing = true
+_G.walkKey = true
+
+--Functions
+
+function autoSwing()
+    while _G.autoSwing == true do
+   workspace.creamshots["Bubble Wand"].ClickEvent:FireServer()
+   wait(.0001)
+   end
+end
+
+function walkKey()
+    while _G.walkKey == true do 
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 250
+    wait(.0001)
+    while _G.walkKey == false do
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   wait(.0001)
+    end
+    end
+end
+--Features
+
+
+Tab:AddToggle({
+	Name = "auto digo",
+	Default = false,
+	Callback = function(Value)
+		_G.autoSwing = Value
+		autoSwing()
+	end    
+})
+
+Tab:AddSlider({
+    Name = "walsped",
+    Min = 16,
+    Max = 250,
+    Default = 16,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end    
+})
+
+Tab:AddSlider({
+    Name = "jumoir",
+    Min = 50,
+    Max = 250,
+    Default = 50,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end    
+})
+
+Teleports:AddDropdown({
+	Name = "selecti field",
+	Default = "Ant",
+	Options = {"Mushroom", "Strawberry", "Pumpkin", "Sunflower", "Blue flower", "Mountain top", "Bamboo", "Spider", "Pine tree", "Rose", "Cactus", "Ant", "Stump", "Clover", "Coconut", "Pepper", "Pineapple", "Dandelion"},
+	Callback = function(Value)
+		getgenv().TPPlace = Value
+	end    
+})
+
+Teleports:AddDropdown({
+	Name = "slecet bera",
+	Default = "Ant",
+	Options = {"Panda Bear", "Brown Bear", "Polar Bear", "Science Bear", "Mother Bear", "Riley Bee", "Bucko Bee", "Bubble Bee Man 2", "Black Bear", "Honey Bee", "Wind Shrine", "Spirit Bear", "Stick Bug", "Onett", "Gummy Bear", "Dapper Bear"},
+	Callback = function(Value)
+		getgenv().TPPlace = Value
+	end    
+})
+
+Teleports:AddButton({
+	Name = "telrport !",
+	Callback = function()
+	    if getgenv().TPPlace == "Mushroom" then
+	        Teleport(game:GetService("Workspace").FlowerZones["Mushroom Field"].CFrame)
+	    elseif getgenv().TPPlace == "Strawberry" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Strawberry Field"].CFrame)
+      	elseif getgenv().TPPlace == "Pumpkin" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Pumpkin Patch"].CFrame)
+	    elseif getgenv().TPPlace == "Sunflower" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Sunflower Field"].CFrame)
+	    elseif getgenv().TPPlace == "Blue flower" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Blue Flower Field"].CFrame)
+	    elseif getgenv().TPPlace == "Mountain top" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Mountain Top Field"].CFrame)
+	    elseif getgenv().TPPlace == "Bamboo" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Bamboo Field"].CFrame)
+	    elseif getgenv().TPPlace == "Spider" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Spider Field"].CFrame)
+	    elseif getgenv().TPPlace == "Pine tree" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Pine Tree Forest"].CFrame)
+	    elseif getgenv().TPPlace == "Rose" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Rose Field"].CFrame)
+      	elseif getgenv().TPPlace == "Cactus" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Cactus Field"].CFrame)
+      	elseif getgenv().TPPlace == "Ant" then
+      		Teleport(game:GetService("Workspace").FlowerZones["Ant Field"].CFrame)
+      	elseif getgenv().TPPlace == "Stump" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Stump Field"].CFrame)
+      	elseif getgenv().TPPlace == "Clover" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Clover Field"].CFrame)
+      	elseif getgenv().TPPlace == "Coconut" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Coconut Field"].CFrame)
+      	elseif getgenv().TPPlace == "Pepper" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Pepper Patch"].CFrame)
+      	elseif getgenv().TPPlace == "Pineapple" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Pineapple Patch"].CFrame)
+      	elseif getgenv().TPPlace == "Dandelion" then
+      	    Teleport(game:GetService("Workspace").FlowerZones["Dandelion Field"].CFrame)
+      	elseif getgenv().TPPlace == "Panda" then
+      	    Teleport(game:GetService("Workspace").NPCs["Panda Bear"].Circle.CFrame)    
+      	elseif getgenv().TPPlace == "Brown Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Brown Bear"].Stand.CFrame) 
+      	elseif getgenv().TPPlace == "Polar Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Polar Bear"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Science Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Science Bear"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Mother Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Mother Bear"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Riley Bee" then
+      	    Teleport(game:GetService("Workspace").NPCs["Riley Bee"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Bucko Bee" then
+      	    Teleport(game:GetService("Workspace").NPCs["Bucko Bee"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Bubble Bee Man 2" then
+      	    Teleport(game:GetService("Workspace").NPCs["Bubble Bee Man 2"].Platform.CFrame)       	    
+      	elseif getgenv().TPPlace == "Black Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Black Bear"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Honey Bee" then
+      	    Teleport(game:GetService("Workspace").NPCs["Honey Bee"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Wind Shrine" then
+      	    Teleport(game:GetService("Workspace").NPCs["Wind Shrine"].Circle.CFrame) 
+      	elseif getgenv().TPPlace == "Spirit Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Spirit Bear"].Stand.CFrame)       	    
+      	elseif getgenv().TPPlace == "Stick Bug" then
+      	    Teleport(game:GetService("Workspace").NPCs["Stick Bug"].Circle.CFrame)      	    
+      	elseif getgenv().TPPlace == "Onett" then
+      	    Teleport(game:GetService("Workspace").NPCs.Onett.Circle.CFrame)      	    
+      	elseif getgenv().TPPlace == "Gummy Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Gummy Bear"].Stand.CFrame)
+      	elseif getgenv().TPPlace == "Dapper Bear" then
+      	    Teleport(game:GetService("Workspace").NPCs["Dapper Bear"].Stand.CFrame)      	    
+      	    
+       end
+  	end    
+})
+
+Keybinds:AddBind({
+	Name = "tp wtiko balck bera",
+	Default = Enum.KeyCode.Q,
+	Hold = false,
+	Callback = function()
+		Teleport(game:GetService("Workspace").NPCs["Black Bear"].Stand.CFrame)
+	end    
+})
+
+Keybinds:AddBind({
+        Name = "walkopsdpeed keiybnd",
+    Default = Enum.KeyCode.LeftShift,
+    Hold = true,
+    Callback = function(Value)
+    _G.walkKey = Value
+    walkKey()
+end
+})
