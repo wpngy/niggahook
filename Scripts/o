@@ -1,0 +1,5 @@
+if game.GameId == 3703297009 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/wpngy/niggahook/main/Scripts/10070062081"))()
+else
+    game.Players.LocalPlayer:Kick("Error loading nigga-hook.\n\nNo supported game found.\n\nPlease join a supported game.\n\n Currently supported games : \n\n Minion simulator")
+end
