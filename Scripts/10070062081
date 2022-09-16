@@ -1,0 +1,55 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Minion Simulator | Nigga hub", HidePremium = true, SaveConfig = true, ConfigFolder = "nigga-hub"})
+
+getgenv().TPPlace = "string"
+
+function Teleport(teleportPlace)
+    local player = game.Players.LocalPlayer
+    player.Character.HumanoidRootPart.CFrame = teleportPlace
+end
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Teleports = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Teleports:AddDropdown({
+	Name = "Select Area",
+	Default = "Shop",
+	Options = {"Shop", "Town", "Farm", "Carnival", "Desert", "Ocean", "Snow", "Magma", "Nuclear"},
+	Callback = function(Value)
+		getgenv().TPPlace = Value
+	end    
+})
+
+Teleports:AddButton({
+	Name = "Teleport!",
+	Callback = function()
+	    if getgenv().TPPlace == "Shop" then
+	        Teleport(game:GetService("Workspace").Positions.Zone.Shop.CFrame)
+      	elseif getgenv().TPPlace == "Town" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Town.CFrame)
+      	elseif getgenv().TPPlace == "Farm" then
+      		Teleport(game:GetService("Workspace").Positions.Zone.Farm.CFrame)
+      	elseif getgenv().TPPlace == "Carnival" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Carnival.CFrame)
+      	elseif getgenv().TPPlace == "Desert" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Desert.CFrame)
+      	elseif getgenv().TPPlace == "Ocean" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Ocean.CFrame)
+      	elseif getgenv().TPPlace == "Snow" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Snow.CFrame)
+      	elseif getgenv().TPPlace == "Magma" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Magma.CFrame)
+      	elseif getgenv().TPPlace == "Nuclear" then
+      	    Teleport(game:GetService("Workspace").Positions.Zone.Nuclear.CFrame)
+       end
+  	end    
+})
